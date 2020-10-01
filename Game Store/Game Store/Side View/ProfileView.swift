@@ -163,7 +163,7 @@ struct ProfileView: View {
                 }
             }.onAppear{self.checkDataAlreadyExist()}
             .sheet(isPresented: self.$showImagePicker, content: {
-                ImagePicker(showImagePicker: self.$showImagePicker, image: self.$image).environmentObject(\.managedObjectContext, self.managedObjectContext)
+                ImagePicker(showImagePicker: self.$showImagePicker, image: self.$image).environment(\.managedObjectContext, self.managedObjectContext)
                 })
             .navigationBarTitle(" ",displayMode: .inline)
             .navigationBarHidden(true)
